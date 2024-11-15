@@ -26,7 +26,7 @@ for i in range(len(df)):
     if df.loc[i, 'insurance']=='Basic': df.loc[i, 'visit_cost'] = round(1000*np.random.uniform(low=0.8, high=1.2), 2)
     if df.loc[i, 'insurance']=='Premium': df.loc[i, 'visit_cost'] = round(750*np.random.uniform(low=0.8, high=1.2), 2)
     if df.loc[i, 'insurance']=='Platinum': df.loc[i, 'visit_cost'] = round(500*np.random.uniform(low=0.8, high=1.2), 2)
-df.to_csv('ms_data_insurance.csv', sep=',')
+df.to_csv('ms_data_insurance.csv', sep=',') # save to a csv file so other scripts can use the same generated data
 
 # step 3
 print('Mean Walking Speed by Education Level\n', df.groupby('education_level')['walking_speed'].mean(), '\n')
