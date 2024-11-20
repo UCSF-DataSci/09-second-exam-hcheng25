@@ -18,3 +18,13 @@
 - Summary statistics for walking speed by education level and visit cost by insurance bype were calculated using `.groupby().mean()`
 - Walking speed by age was fit to a linear regression to determine the effect of aging one year on walking speed, represented by the coefficient for `age`
 - Final data frame was written into `ms_data_insurance.csv` for use in the next question's Python script
+
+## Question 3: Statistical Analysis
+- Read `ms_data_insurance.csv` for previously generated `insurance` data
+- Performed a multiple linear regression to determine average change in `walking_speed` per unit of `age` and average change in `walking_speed` by category of `education_level`
+    - P>|t| values for all coefficients were less than 0.001, indicating a signficant effect of `age` and `education_level` on `walking_speed`
+- Summary statistics for `visit_cost` were printed for both the overall data and for each type of `insurance`
+- Crude R2 value was found for the linear regression model predicting `walking_speed` based on `age`, and adjusted R2 value was found using the multiple linear regression model predicting `walking_speed` based on both `age` and `education_level`
+    - Comparing the difference in the crude and adjusted R2 values suggested that there is a significant confounding effecting by `education_level` on the relationship between `age` and `walking_speed`
+- Interaction effects by `education_level` on the relationship between `walking_speed` and `age` were found by using a linear regression model with the formula `walking_speed~age*education_level`
+    - The P>|t| values for the coefficient of `age:education_level[T.Graduate]` suggests there is some interaction effect on `age` and `walking_speed` at some categorical levels of `education_level`
