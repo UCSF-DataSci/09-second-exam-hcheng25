@@ -32,12 +32,13 @@ plt.clf()
 
 # part 3 - advanced analysis
 print('Part 3 - Advanced analysis\n')
-sns.scatterplot(data=df, 
+ax = sns.scatterplot(data=df, 
                 x='age', 
                 y='walking_speed', 
                 hue='education_level',
                 alpha=0.5,
                 markers='.')
+ax.set_title('Walking Speed by Age and Education Level')
 plt.savefig('walkspeed-by-age-edu.jpg')
 plt.clf()
 
@@ -48,9 +49,9 @@ results = model2.fit()
 print(f' - Unadjusted age coefficient: {results.params.iloc[1]}')
 model2 = smf.ols(formula='walking_speed~age+education_level', data=df)
 results2 = model2.fit()
-print(f' - Adjusted by education_level R2 value: {results2.params.iloc[4]}')
-print(f' - Difference in R2: {results2.params.iloc[4]-results.params.iloc[1]}')
-print('Note: if difference is >10% of unadjusted R2, there is likely confounding.\n')
+print(f' - Adjusted (by education_level) age coefficient: {results2.params.iloc[4]}')
+print(f' - Difference in unadjusted and adjusted coefficients: {results2.params.iloc[4]-results.params.iloc[1]}')
+print('Note: if difference is >10% of unadjusted coefficient, there is likely confounding.\n')
 
 print("=== Interaction of Education Level on Walking Speed by Age ===")
 model2 = smf.ols(formula='walking_speed~age*education_level', data=df)

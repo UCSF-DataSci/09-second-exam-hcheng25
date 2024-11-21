@@ -26,8 +26,8 @@
     - P>|t| values for all coefficients were less than 0.001, indicating the existence of a statistically signficant effect of `age` and `education_level` on `walking_speed`
 - Summary statistics for `visit_cost` were printed for both the overall data and for each type of `insurance`
 - Crude `age` coefficient was found for the linear regression model predicting `walking_speed` based on `age`, and adjusted `age` coeffcient was found using the multiple linear regression model predicting `walking_speed` based on both `age` and `education_level`
-    - Comparing the difference in the crude and adjusted R2 values suggested that there is no confounding effecting by `education_level` on the relationship between `age` and `walking_speed`
+    - Comparing the difference in the crude and adjusted coefficients suggested that there is no confounding effect by `education_level` on the relationship between `age` and `walking_speed`
 - Interaction effects by `education_level` on the relationship between `walking_speed` and `age` were found by using a linear regression model with the formula `walking_speed~age*education_level`
-    - The P>|t| values for the coefficient of `age:education_level[T.Graduate]` suggests there is some interaction effect on `age` and `walking_speed` at some categorical levels of `education_level`
+    - The low P>|t| value of 0.028 for the coefficient of `age:education_level[T.Graduate]` suggests there is some statistically significant interaction effect on `age` and `walking_speed` in at least some categorical levels of `education_level`
 - Results of `stats_analysis.py` was output to the text file `stats_analysis_result.txt`
 - Boxplot for BMI by age group and scatterplot for walking speed by both age and education level were output to `bmi-by-age-group.jpg` and `walkspeed-by-age-edu.jpg` respectively
