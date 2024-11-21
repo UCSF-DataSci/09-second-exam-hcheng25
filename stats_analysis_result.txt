@@ -1,0 +1,82 @@
+Part 1 - Analyze walking speed
+
+=== Linear Regression for Walking Speed by Age and Education ===
+===================================================================================================
+                                      coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------
+Intercept                           5.6203      0.010    556.176      0.000       5.601       5.640
+education_level[T.Graduate]         0.3966      0.008     50.352      0.000       0.381       0.412
+education_level[T.High School]     -0.8075      0.008   -100.615      0.000      -0.823      -0.792
+education_level[T.Some College]    -0.4113      0.008    -52.670      0.000      -0.427      -0.396
+age                                -0.0303      0.000   -191.897      0.000      -0.031      -0.030
+=================================================================================================== 
+
+Part 2 - Analyze costs
+
+Overall visit cost statistics:
+ count    15387.000000
+mean       746.374768
+std        225.107923
+min        400.050000
+25%        542.640000
+50%        743.720000
+75%        899.585000
+max       1199.930000
+Name: visit_cost, dtype: float64 
+
+Basic insurance visit cost statistics:
+ count    5188.000000
+mean      998.362190
+std       116.628484
+min       800.040000
+25%       895.417500
+50%       998.090000
+75%      1099.912500
+max      1199.930000
+Name: visit_cost, dtype: float64 
+
+Premium insurance visit cost statistics:
+ count    4808.000000
+mean      749.860532
+std        87.409446
+min       600.050000
+25%       674.535000
+50%       750.945000
+75%       826.510000
+max       899.910000
+Name: visit_cost, dtype: float64 
+
+Platinum insurance visit cost statistics:
+ count    5391.000000
+mean      500.767219
+std        57.297885
+min       400.050000
+25%       452.135000
+50%       500.700000
+75%       550.605000
+max       599.990000
+Name: visit_cost, dtype: float64 
+
+Part 3 - Advanced analysis
+
+=== Examination of Confounding of Education Level on Walking Speed by Age ===
+ - Unadjusted R2 value: 0.4791414000613454
+ - Adjusted by education_level R2 value: 0.8082336471676728
+ - Difference in R2: 0.32909224710632734
+Note: if difference is >10% of unadjusted R2, there is likely confounding.
+
+=== Interaction of Education Level on Walking Speed by Age ===
+=======================================================================================================
+                                          coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------
+Intercept                               5.6026      0.018    311.027      0.000       5.567       5.638
+education_level[T.Graduate]             0.4476      0.025     18.114      0.000       0.399       0.496
+education_level[T.High School]         -0.7838      0.025    -31.086      0.000      -0.833      -0.734
+education_level[T.Some College]        -0.4155      0.025    -16.794      0.000      -0.464      -0.367
+age                                    -0.0299      0.000    -92.696      0.000      -0.031      -0.029
+age:education_level[T.Graduate]        -0.0010      0.000     -2.193      0.028      -0.002      -0.000
+age:education_level[T.High School]     -0.0004      0.000     -0.988      0.323      -0.001       0.000
+age:education_level[T.Some College]  7.812e-05      0.000      0.176      0.860      -0.001       0.001
+=======================================================================================================
+Note: if Pr(>|t|)<0.05 for var1:var2 coefficient, there is likely an interaction effect.
+

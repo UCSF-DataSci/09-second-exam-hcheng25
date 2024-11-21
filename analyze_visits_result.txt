@@ -1,0 +1,22 @@
+Mean Walking Speed by Education Level
+ education_level
+Bachelors       4.018453
+Graduate        4.476606
+High School     3.236911
+Some College    3.606970
+Name: walking_speed, dtype: float64 
+
+Mean Visit Cost by Insurance Type
+ insurance
+Basic       998.362190
+Platinum    500.767219
+Premium     749.860532
+Name: visit_cost, dtype: float64 
+
+=== Linear Regression for Walking Speed by Age ===
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          5.4525      0.014    381.430      0.000       5.424       5.480
+age           -0.0309      0.000   -118.965      0.000      -0.031      -0.030
+==============================================================================
