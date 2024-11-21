@@ -60,9 +60,9 @@ Name: visit_cost, dtype: float64
 Part 3 - Advanced analysis
 
 === Examination of Confounding of Education Level on Walking Speed by Age ===
- - Unadjusted R2 value: 0.4791414000613454
- - Adjusted by education_level R2 value: 0.8082336471676728
- - Difference in R2: 0.32909224710632734
+ - Unadjusted age coefficient: -0.030895896859055052
+ - Adjusted by education_level R2 value: -0.030277655993507336
+ - Difference in R2: 0.0006182408655477159
 Note: if difference is >10% of unadjusted R2, there is likely confounding.
 
 === Interaction of Education Level on Walking Speed by Age ===
