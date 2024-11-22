@@ -54,12 +54,12 @@
 - Each subset of data was ordered by age, then the age value rounded to the nearest whole number
 - The mean walking speed of each age value was plotted on a line graph
     - Based on this plot, from highest to lowest walking speed, education level is consistently ordered Graduate, Bachelors, Some College, High School
-    - Plot was tweaked so that the order of the legend matches the order of the groups in terms of walking speed
+    - Plot was tweaked so that the order of the legend matches the order of the groups on the lineplot
 
 - Cost analysis:
-   - [ ] Bar plot of mean costs by insurance type
-   - [ ] Box plots showing cost distributions
-   - [ ] Add error bars or confidence intervals
+   - [x] Bar plot of mean costs by insurance type
+   - [x] Box plots showing cost distributions
+   - [x] Add error bars or confidence intervals
 - Combined visualizations:
    - [ ] Pair plot of key variables
    - [ ] Faceted plots by education/insurance
