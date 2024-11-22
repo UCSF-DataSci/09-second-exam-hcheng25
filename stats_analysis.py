@@ -26,8 +26,8 @@ print('Premium insurance visit cost statistics:\n', df.loc[df['insurance']=='Pre
 print('Platinum insurance visit cost statistics:\n', df.loc[df['insurance']=='Platinum', 'visit_cost'].describe(), '\n')
 
 ax = sns.boxplot(data=df, x='insurance', y='visit_cost', color='lightblue')
-ax.set_title('BMI Distribution by Age Group')
-plt.savefig('bmi-by-age-group.jpg')
+ax.set_title('Visit Cost Distribution by Insurance Type')
+plt.savefig('cost-by-insurance.jpg')
 plt.clf()
 
 # part 3 - advanced analysis
