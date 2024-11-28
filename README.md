@@ -22,7 +22,7 @@
 2. Calculate summary statistics
     - Summary statistics for walking speed by education level and visit cost by insurance type were calculated using `.groupby().mean()`
     - Walking speed by age was fit to a linear regression to determine the effect of aging one year on walking speed, represented by the coefficient for `age`
-- Results of `analyze_visits.py` was output to the text file `analyze_visits_result.txt`
+- Results of `analyze_visits.py` were output to the text file `analyze_visits_result.txt`
 - Final data frame was written into `ms_data_insurance.csv` for use in the next question's Python script
 
 ## Question 3: Statistical Analysis
@@ -38,24 +38,24 @@
         - Comparing the difference in the crude and adjusted coefficients suggested that there is no confounding effect by `education_level` on the relationship between `age` and `walking_speed`
     - Interaction effects by `education_level` on the relationship between `walking_speed` and `age` were found by using a linear regression model with the formula `walking_speed~age*education_level`
         - The low P>|t| value of 0.028 for the coefficient of `age:education_level[T.Graduate]` suggests there is some statistically significant interaction effect on `age` and `walking_speed` in at least some categorical levels of `education_level`
-- Results of `stats_analysis.py` was output to the text file `stats_analysis_result.txt`
+- Results of `stats_analysis.py` were output to the text file `stats_analysis_result.txt`
 - Boxplot for BMI by age group and scatterplot for walking speed by both age and education level were output to `cost-by-insurance.jpg` and `walkspeed-by-age-edu.jpg` respectively
 
 ## Question 4: Data Visualization
 - File: `visualize.ipynb`
-- Scatterplot and linear regression model were plotted for walking speed vs. age
-    - The scatterplot showed an inverse relationship between walking speed and age, and the variation around the linear regression model appears to be uniform
-- Linear regression model equation was printed using `params` to obtain the appropriate coefficients from the linear regression
-    - Based on the coefficient of the model, walking speed decreases on average by about 0.031 units per year older a subject is
-- Boxplot for distributions of walking speed separated by education level was plotted
-    - All education level categories contained outliers for walking speed
-    - From greatest to least medians, the categories are ordered: Graduate, Bachelors, Some College, High School
-- Data was separated into four subsets of data based on education level
-- Each subset of data was ordered by age, then the age value rounded to the nearest whole number
-- The mean walking speed of each age value was plotted on a line graph
-    - Based on this plot, from highest to lowest walking speed, education level is consistently ordered Graduate, Bachelors, Some College, High School
-    - Plot was tweaked so that the order of the legend matches the order of the groups on the lineplot
-
+1. Walking speed analysis
+    - Scatterplot and linear regression model were plotted for walking speed vs. age
+        - The scatterplot showed an inverse relationship between walking speed and age, and the variation around the linear regression model appears to be uniform
+    - Linear regression model equation was printed using `params` to obtain the appropriate coefficients from the linear regression
+        - Based on the coefficient of the model, walking speed decreases on average by about 0.031 units per year older a subject is
+    - Boxplot for distributions of walking speed separated by education level was plotted
+        - All education level categories contained outliers for walking speed
+        - From greatest to least medians, the categories are ordered: Graduate, Bachelors, Some College, High School
+    - Data was separated into four subsets of data based on education level
+    - Each subset of data was ordered by age, then the age value rounded to the nearest whole number
+    - The mean walking speed of each age value was plotted on a line graph
+        - Based on this plot, from highest to lowest walking speed, education level is consistently ordered Graduate, Bachelors, Some College, High School
+        - Plot was tweaked so that the order of the legend matches the order of the groups on the lineplot
 - Cost analysis:
    - [x] Bar plot of mean costs by insurance type
    - [x] Box plots showing cost distributions
