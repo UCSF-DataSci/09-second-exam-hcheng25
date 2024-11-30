@@ -56,11 +56,18 @@
     - The mean walking speed of each age value was plotted on a line graph
         - Based on this plot, from highest to lowest walking speed, education level is consistently ordered Graduate, Bachelors, Some College, High School
         - Plot was tweaked so that the order of the legend matches the order of the groups on the lineplot
-- Cost analysis:
-   - [x] Bar plot of mean costs by insurance type
-   - [x] Box plots showing cost distributions
-   - [x] Add error bars or confidence intervals
-- Combined visualizations:
-   - [ ] Pair plot of key variables
-   - [ ] Faceted plots by education/insurance
-   - [ ] Time trends where relevant
+2. Cost analysis
+    - A bar plot was plotted for mean visit cost by insurance type with 95% confidence intervals
+        - Due to the extremely large sample size, the confidence intervals were extremely short relative to the length of the bars
+        - Exact values of confidence interval length were printed below bar plot for informational purposes
+    - A box plot for visit cost distribution by insurance type was plotted
+        - The plot indicates that the insurance types from most to least expensive are: Basic, Premium, Platinum
+3. Combined visualizations:
+    - A pair plot for walking speed, age, and education level was generated
+        - According to the histograms along the diagonals:
+            - The distribution of education level was roughly uniform across all four categories
+            - The distribution of walking speed appears to be approximately normal
+            - The distribution of age appears to be mostly uniform, with some tapering at the highest and lowest ages
+    - Scatterplots in a faceted grid were plotted, with the facets representing different categories of insurance type and education level, and the scatterplots themselves showing walking speed by age
+        - All plots indicate a general negative association between age and walking speed, with higher education levels also associated with higher walking speeds overall
+        - When comparing plots between different insurance types with the same education level, the distribution appears to be similar, indicating no effect modification by education level on the relationship between walking speed and age
